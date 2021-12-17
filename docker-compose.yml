@@ -1,0 +1,12 @@
+version: "3"
+services: 
+  web:
+    cap_add: 
+      - SYS_ADMIN
+      - NET_ADMIN
+    image: httpd
+    volumes: 
+      - ./data:/usr/local/apache2/htdocs/
+  client:
+    image: ubuntu
+    tty: true
